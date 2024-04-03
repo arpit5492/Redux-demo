@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 
 const Cart = () => {
     const prods = useSelector(store => store.cart);
+    // console.log(prods);
     return (
         <div className="col-sm-4 mr-3">
             <div className="card" style={{height: "300px"}}>
@@ -10,7 +11,7 @@ const Cart = () => {
                     <hr />
                     {prods.map((prod, index) => {
                         return (
-                            <li key={index}>{prod}</li>
+                            <li key={index}>{prod.text}</li>
                         )  
                     })}
                 </div>

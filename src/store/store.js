@@ -13,6 +13,14 @@ const initData = {
 }
 
 const reducer = (state = initData, action) => {
+    console.log(action);
+    if(action.type === "ADD") {
+        return {
+            ...state,
+            cart: [...state.cart, action.payLoad],
+            total: state.total + action.payLoad.price
+        }
+    }
     return state;
 }
 
