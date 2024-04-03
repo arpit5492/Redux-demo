@@ -1,10 +1,7 @@
+import { useSelector } from "react-redux"
+
 const Purchase = () => {
-    const prods = [
-        {pName: "Apples", price: 1.45},
-        {pName: "Bananas", price: 1.67},
-        {pName: "Grapes", price: 2.32},
-        {pName: "Oranges", price: 7.89}
-    ];
+    const prods = useSelector(store => store.products);
 
     const prodItems = prods.map((prod, index) => {
         return (
