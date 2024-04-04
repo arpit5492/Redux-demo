@@ -1,8 +1,15 @@
-import { useSelector } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
     const prods = useSelector(store => store.cart);
     // console.log(prods);
+
+    const dispatch = useDispatch();
+
+    const prodClick = (index, price) => {
+        // console.log(index);
+        dispatch({type: "REMOVE", payLoad: {index, price}});
+    }
     return (
         <div className="col-sm-4 mr-3">
             <div className="card" style={{height: "300px"}}>
@@ -11,7 +18,9 @@ const Cart = () => {
                     <hr />
                     {prods.map((prod, index) => {
                         return (
-                            <li key={index}>{prod.text}</li>
+                            <li key={index} onClick={() => prodClick(index, prod.price)}>
+                                {prod.text}
+                            </li>
                         )  
                     })}
                 </div>

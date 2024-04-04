@@ -21,6 +21,14 @@ const reducer = (state = initData, action) => {
             total: state.total + action.payLoad.price
         }
     }
+
+    if(action.type === "REMOVE") {
+        return {
+            ...state,
+            cart: state.cart.filter((value, index) => index !== action.payLoad.index),
+            total: state.total - action.payLoad.price
+        }
+    }
     return state;
 }
 

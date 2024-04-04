@@ -2,24 +2,25 @@ import { useDispatch, useSelector } from "react-redux"
 
 const Purchase = () => {
     const prods = useSelector(store => store.products);
-
-    const prodItems = prods.map((prod, index) => {
-        return (
-            <option value={prod.price} key={index}>{prod.pName} - ${prod.price}</option>
-        )
-    });
-
     const dispatch = useDispatch();
     
     const prodHandler = (e) => {
         const text = (e.target.options[e.target.selectedIndex].innerHTML);
-        const price = parseFloat(e.target.value);
+        const price = parseInt(e.target.value);
         // console.log(text);
         // console.log(typeof(price));
         const prodObj = {text, price};
         // console.log(prodObj);
         dispatch({type: "ADD", payLoad: prodObj});
     }
+
+    const prodItems = prods.map((prod, index) => {
+        return (
+            <option value={prod.price} key={index}>
+                {prod.pName} - ${prod.price}
+            </option>
+        )
+    });
 
     return (
         <div className="col-sm-4 mr-3">
