@@ -1,11 +1,11 @@
 import { USERADD } from "./actions";
 
-const initData = {
+const initState = {
     login: ["Admin", "User1", "User2", "Manager"],
     loginDet: ""
 }
 
-const loginReducer = (state = initData, action) => {
+const loginReducer = (state = initState, action) => {
     console.log(action);
     if(action.type === USERADD) {
         return {

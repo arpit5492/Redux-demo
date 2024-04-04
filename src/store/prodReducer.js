@@ -1,6 +1,6 @@
 import * as actions from "./actions";
 
-const initData = {
+const initState = {
     products: [
         {pName: "Apples", price: 1.45},
         {pName: "Bananas", price: 1.67},
@@ -12,7 +12,7 @@ const initData = {
     total: 0,
 }
 
-const prodReducer = (state = initData, action) => {
+const prodReducer = (state = initState, action) => {
     console.log(action);
     if(action.type === actions.ADD) {
         return {
