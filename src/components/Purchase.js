@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux"
 const Purchase = () => {
     const prods = useSelector(store => store.products);
     const dispatch = useDispatch();
+    const loginDet = useSelector(store => store.loginDet);
     
     const prodHandler = (e) => {
         const text = (e.target.options[e.target.selectedIndex].innerHTML);
@@ -26,7 +27,7 @@ const Purchase = () => {
         <div className="col-sm-4 mr-3">
             <div className="card" style={{height: "300px"}}>
                 <div className="card-body">
-                    <h4 className="card-title">Purchase Component</h4>
+                    <h4 className="card-title">Purchase Component - {loginDet}</h4>
                     <hr />
                     <select onChange={prodHandler} className="form-select" aria-label="default select example">
                         {prodItems}

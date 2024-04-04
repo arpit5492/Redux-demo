@@ -2,6 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
     const prods = useSelector(store => store.cart);
+    const loginDet = useSelector(store => store.loginDet);
     // console.log(prods);
 
     const dispatch = useDispatch();
@@ -14,7 +15,7 @@ const Cart = () => {
         <div className="col-sm-4 mr-3">
             <div className="card" style={{height: "300px"}}>
                 <div className="card-body">
-                    <h4 className="card-title">Cart Component</h4>
+                    <h4 className="card-title">Cart Component - {loginDet}</h4>
                     <hr />
                     {prods.map((prod, index) => {
                         return (
