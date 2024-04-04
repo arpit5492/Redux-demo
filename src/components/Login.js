@@ -2,7 +2,7 @@ import { useDispatch, useSelector } from "react-redux";
 
 const Login = () => {
 
-    const users = useSelector(store => store.login);
+    const users = useSelector(store => store.lr.login);
     const dispatch = useDispatch();
 
     const eachUser = users.map((user, index) => {

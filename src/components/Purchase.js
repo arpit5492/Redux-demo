@@ -1,9 +1,9 @@
 import { useDispatch, useSelector } from "react-redux"
 
 const Purchase = () => {
-    const prods = useSelector(store => store.products);
+    const prods = useSelector(store => store.pr.products);
     const dispatch = useDispatch();
-    const loginDet = useSelector(store => store.loginDet);
+    const loginDet = useSelector(store => store.lr.loginDet);
     
     const prodHandler = (e) => {
         const text = (e.target.options[e.target.selectedIndex].innerHTML);
