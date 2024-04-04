@@ -1,3 +1,5 @@
+import * as actions from "./actions";
+
 const initData = {
     products: [
         {pName: "Apples", price: 1.45},
@@ -12,7 +14,7 @@ const initData = {
 
 const prodReducer = (state = initData, action) => {
     console.log(action);
-    if(action.type === "ADD") {
+    if(action.type === actions.ADD) {
         return {
             ...state,
             cart: [...state.cart, action.payLoad],
@@ -20,7 +22,7 @@ const prodReducer = (state = initData, action) => {
         }
     }
 
-    if(action.type === "REMOVE") {
+    if(action.type === actions.REMOVE) {
         return {
             ...state,
             cart: state.cart.filter((value, index) => index !== action.payLoad.index),

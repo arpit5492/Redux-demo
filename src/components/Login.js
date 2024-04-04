@@ -1,4 +1,5 @@
 import { useDispatch, useSelector } from "react-redux";
+import { USERADD } from "../store/actions";
 
 const Login = () => {
 
@@ -14,7 +15,7 @@ const Login = () => {
     const loginHandler = (e) => {
         const text = (e.target.options[e.target.selectedIndex].innerHTML);
         console.log(text);
-        dispatch({type: "USERADD", payLoad: text});
+        dispatch({type: USERADD, payLoad: text});
     }
     return (
         <div className="col-sm-4 mr-3">
