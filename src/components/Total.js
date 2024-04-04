@@ -1,8 +1,8 @@
 import { useSelector } from "react-redux";
 
 const Total = () => {
-    const total = useSelector(store => store.total);
-    const loginDet = useSelector(store => store.loginDet);
+    const total = useSelector(store => store.pr.total);
+    const loginDet = useSelector(store => store.lr.loginDet);
     return (
         <div className="col-sm-4">
             <div className="card mt-4" style={{height: "300px"}}>

@@ -1,8 +1,8 @@
 import { useDispatch, useSelector } from "react-redux";
 
 const Cart = () => {
-    const prods = useSelector(store => store.cart);
-    const loginDet = useSelector(store => store.loginDet);
+    const prods = useSelector(store => store.pr.cart);
+    const loginDet = useSelector(store => store.lr.loginDet);
     // console.log(prods);
 
     const dispatch = useDispatch();
